@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "structureworld",
+  "version": "${version}",
+  "name": "Structure World",
+  "description": "在创建世界时提供一个“结构世界”预设，让地面上铺满原版结构（村庄、神庙、海底神殿、要塞等）。",
+  "authors": [
+    "StructureWorld"
+  ],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.example.structureworld.StructureWorldMod"
+    ]
+  },
+  "mixins": [
+    "structureworld.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~1.21.11"
+  }
+}

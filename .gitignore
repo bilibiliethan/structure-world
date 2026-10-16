@@ -1,0 +1,33 @@
+# Gradle
+.gradle/
+build/
+out/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.classpath
+.project
+
+# 运行/日志
+run/
+logs/
+*.log
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# 备份（本地迭代时留下的 jar 备份）
+*.bak
+*.bak2
+*.bak3
+*.bak4
+
+# 本地工具产生的临时文件
+tools/__pycache__/
+*.pyc
