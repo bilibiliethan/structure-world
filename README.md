@@ -1,5 +1,8 @@
 # Structure World（结构世界）
 
+[![Build](https://github.com/bilibiliethan/structure-world/actions/workflows/build.yml/badge.svg)](https://github.com/bilibiliethan/structure-world/actions/workflows/build.yml)
+[![Release](https://img.shields.io/github/v/release/bilibiliethan/structure-world?label=release)](https://github.com/bilibiliethan/structure-world/releases/latest)
+
 一个 **Minecraft Fabric** 模组（当前编译验证版本 **1.21.11**；目标版本 1.26.3，见文末核对清单）。
 
 在“创建世界”界面提供一个名为 **结构世界（铺满结构）** 的世界预设。选用后，**世界就是一个标准、正常的主世界**（地形、洞穴、生物群系、出生点全部与原版一致），只是原版结构被高密度地铺在地表上（村庄、神庙、海底神殿、沉船……）。
@@ -47,6 +50,11 @@ v2 的做法：
 ---
 
 ## 构建与运行
+
+**直接下载现成 jar**（推荐，不用自己编译）：
+👉 [Releases 页面](https://github.com/bilibiliethan/structure-world/releases/latest) → 下载 `structureworld-x.y.z.jar`
+
+自己编译：
 
 ```bash
 cd structure-world
