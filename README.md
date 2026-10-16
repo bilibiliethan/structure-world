@@ -50,11 +50,32 @@ v2 的做法：
 
 ```bash
 cd structure-world
-gradle build          # 产物：build/libs/structureworld-1.0.0.jar
+./gradlew build        # 产物：build/libs/structureworld-1.0.0.jar
 ```
+
+> 需要 **JDK 25**（fabric-loom 1.18 的硬性要求）。没装 wrapper 的机器可直接用本地 Gradle 9.7+：`gradle build`。
+> `gradle.properties` 里已设 `org.gradle.jvmargs=-Xmx4G`（loom 反编译 Minecraft 时吃内存）。
 
 把 jar 放进 `.minecraft/mods/`，启动游戏即可。本机 PCL 实例路径：
 `D:\pcl\.minecraft\versions\1.21.11-Fabric 0.19.3\mods\`
+
+### 自动构建（GitHub Actions）
+
+工作流：`.github/workflows/build.yml`
+
+| 触发时机 | 行为 |
+| --- | --- |
+| 推送到 `main` / 向 `main` 提 PR | 编译验证，产物上传为 Actions artifact（保留 30 天） |
+| 推送 `v*` 标签（如 `v1.0.0`） | 额外**自动创建 Release 并附上模组 jar** |
+| Actions 页面手动 Run workflow | 同上，仅编译 |
+
+产物永远只含可用的模组 jar（`-dev.jar` 开发包与 `-sources.jar` 源码包会被排除）。
+要发版：
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0     # 去 Actions 页面等 Release 自动出现
+```
 
 ### 在游戏里使用
 1. 单人游戏 → 创建世界
